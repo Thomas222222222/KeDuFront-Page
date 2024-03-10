@@ -206,3 +206,26 @@
 .cartPage .orderSummary button:hover {
     cursor: pointer;
 }
+
+/* Responsive form */
+@media screen and (max-width: 900px) {
+    .cartPage .summaryCart {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cartPage .summaryCart .formContact {
+        width: auto;
+        margin-bottom: 15px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .cartPage .summaryCart .orderSummary {
+        width: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
