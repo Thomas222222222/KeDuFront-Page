@@ -1,0 +1,107 @@
+@font-face {
+    font-family: ProtestRiot-Regular;
+    src: url('../font/ProtestRiot-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.topPage {
+    background-color: #e5e7e6;
+    margin: 0;
+}
+
+.topPage .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.topPage .logo img {
+    height: 130px;
+    width: auto;
+}
+
+.topPage .logo h1 {
+    color: #93441A;
+    font-family: 'ProtestRiot-Regular';
+}
+
+.topPage .logo nav {
+    width: 300px;
+    margin-left: auto;
+    margin-right: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topPage .logo nav a, i {
+    color: #93441A;
+}
+
+.topPage .logo nav a {
+    text-decoration: none;
+    font-family: 'ProtestRiot-Regular';
+    font-size: 22px;
+}
+
+/* Content */
+.contentPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 10px;
+}
+
+.contentPage::-webkit-scrollbar {
+    display: none;
+}
+
+.contentPage h2, .description-home {
+    font-family: 'ProtestRiot-Regular';
+    color: #93441A;
+}
+
+.contentPage h2 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.contentPage .description-home {
+    font-size: 18px;
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+    .topPage {
+        padding-bottom: 50px;
+    }
+
+    .topPage .logo {
+        place-content: center;
+    }
+
+    .topPage .logo h1 {
+        display: none;
+    }
+
+    .topPage .logo nav {
+        position: absolute;
+        top: 135px;
+        margin: 0;
+    }
+}

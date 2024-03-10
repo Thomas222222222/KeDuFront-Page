@@ -1,0 +1,127 @@
+@font-face {
+    font-family: ProtestRiot-Regular;
+    src: url('../font/ProtestRiot-Regular.ttf');
+}
+
+.blurBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 900;
+    display: none;
+}
+
+/* Specific Product */
+.specificProduct {
+    position: fixed;
+    min-width: 800px;
+    background-color: #e5e7e6;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 999;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+}
+
+/* Top */
+.specificProduct .specificProductTop {
+    display: flex;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.specificProduct .specificProductTop h2 {
+    font-size: 30px;
+    font-family: 'ProtestRiot-Regular';
+    color: #93441A;
+    margin: 0;
+}
+
+.specificProduct .specificProductTop i {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.specificProduct .specificProductTop i:hover {
+    cursor: pointer;
+}
+
+/* Content */
+.specificProduct .specificProductContent {
+    display: flex;
+    place-content: center;
+}
+
+.specificProduct .specificProductContent img {
+    height: 600px;
+    width: auto;
+    border-radius: 8px;
+}
+
+/* Bottom */
+.specificProduct .specificProductBottom {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.specificProduct .specificProductBottom p {
+    font-size: 18px;
+    font-family: 'ProtestRiot-Regular';
+    color: #93441A;
+    margin: 0;
+}
+
+.specificProduct .specificProductBottom button {
+    background-color: #93441A;
+    color: white;
+    font-family: 'ProtestRiot-Regular';
+    font-size: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    border: none;
+    border-radius: 80px;
+}
+
+.specificProduct .specificProductBottom button:hover {
+    cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 1000px) {
+    .specificProduct {
+        min-width: 600px;
+    }
+    .specificProduct .specificProductContent img {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .specificProduct {
+        min-width: 500px;
+    }
+    .specificProduct .specificProductContent img {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .specificProduct {
+        min-width: 0px;
+    }
+    .specificProduct .specificProductContent img {
+        height: 300px;
+    }
+}
