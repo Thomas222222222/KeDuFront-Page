@@ -105,3 +105,10 @@ body {
         margin: 0;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .contentPage {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}

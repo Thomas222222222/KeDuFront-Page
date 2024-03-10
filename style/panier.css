@@ -209,6 +209,10 @@
 
 /* Responsive form */
 @media screen and (max-width: 900px) {
+    .cartPage [class^='product'] p:not([class^='priceTotal']) {
+        display: none;
+    }
+
     .cartPage .summaryCart {
         display: flex;
         flex-direction: column;
@@ -227,5 +231,9 @@
         margin-bottom: 15px;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .cartPage .summaryCart .formContact input {
+        width: 70vw;
     }
 }

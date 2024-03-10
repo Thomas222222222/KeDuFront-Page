@@ -90,3 +90,13 @@
         height: 200px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .productsPage [class^='item'] img {
+        height: 40vw;
+    }
+
+    .productsPage .specificProduct .specificProductContent img {
+        height: 40vw;
+    }
+}
