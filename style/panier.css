@@ -165,7 +165,6 @@
 .cartPage .orderSummary .boxDetails {
     display: flex;
     justify-content: space-between;
-    display: row;
     margin-top: 8px;
     margin-bottom: 8px;
 }
