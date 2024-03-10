@@ -95,14 +95,15 @@ function reduceTotalPrice(removedPrice)
  * Function to remove quantities of specific product
  * @param {Object} productInfo - Object with product information
  */
-function removeQuantityOfProduct(productInfo) {
+function removeQuantityOfProduct(productInfo, quantity) {
     var storedProducts = JSON.parse(localStorage.getItem('cart'));
     var inputPrice = document.querySelector('.entryQuantity' + productInfo._id);
     var totalPrice = document.querySelector('.priceTotal' + productInfo._id);
 
     for (var i = 0; i < storedProducts.length; i++) {
-        if (storedProducts[i].id === productInfo._id && storedProducts[i].amount > 0) {
-            storedProducts[i].amount -= 1;
+        if (storedProducts[i].id === productInfo._id && storedProducts[i].amount > 0
+            && (storedProducts[i].amount - quantity) > 0) {
+            storedProducts[i].amount -= quantity;
             inputPrice.value = storedProducts[i].amount;
             reduceTotalPrice(productInfo.price);
             totalPrice.textContent = `${productInfo.price * storedProducts[i].amount} €`;
@@ -116,14 +117,14 @@ function removeQuantityOfProduct(productInfo) {
  * Function to add quantities of specific product
  * @param {Object} productInfo - Object with product information
  */
-function addQuantityOfProduct(productInfo) {
+function addQuantityOfProduct(productInfo, quantity) {
     var storedProducts = JSON.parse(localStorage.getItem('cart'));
     var inputPrice = document.querySelector('.entryQuantity' + productInfo._id);
     var totalPrice = document.querySelector('.priceTotal' + productInfo._id);
 
     for (var i = 0; i < storedProducts.length; i++) {
         if (storedProducts[i].id === productInfo._id) {
-            storedProducts[i].amount += 1;
+            storedProducts[i].amount += quantity;
             inputPrice.value = storedProducts[i].amount;
             increaseTotalPrice(productInfo.price);
             totalPrice.textContent = `${productInfo.price * storedProducts[i].amount} €`;
@@ -177,17 +178,18 @@ function createInfoProduct(productInfo, product) {
     buttonMinus.className = 'minus';
     buttonMinus.appendChild(iconMinus);
     buttonMinus.addEventListener('click', function() {
-        removeQuantityOfProduct(productInfo);
+        removeQuantityOfProduct(productInfo, 1);
     });
 
     entryPrice.className = 'entryQuantity' + productInfo._id;
+    entryPrice.type ="number";
     entryPrice.value = product.amount;
 
     iconPlus.className = 'fa-solid fa-plus';
     buttonPlus.className = 'plus';
     buttonPlus.appendChild(iconPlus);
     buttonPlus.addEventListener('click', function() {
-        addQuantityOfProduct(productInfo);
+        addQuantityOfProduct(productInfo, 1);
     });
 
     price.className = 'priceTotal' + productInfo._id;
@@ -318,7 +320,7 @@ async function displayCart() {
     var storedProducts = JSON.parse(localStorage.getItem('cart'));
     var product;
 
-    if (storedProducts.length === 0) {
+    if (storedProducts === null || storedProducts.length === 0) {
         return;
     }
     for (var i = 0; i < storedProducts.length; i++) {

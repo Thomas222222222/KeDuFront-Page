@@ -75,10 +75,16 @@
     color: black;
 }
 
-.cartPage [class^='product'] .price input {
+.cartPage [class^='product'] .price [class^=entryQuantity] {
     height: 2.8vh;
     width: 50px;
     text-align: center;
+}
+
+.cartPage [class^='product'] .price [class^=entryQuantity]::-webkit-inner-spin-button,
+.cartPage [class^='product'] .price [class^=entryQuantity]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Total price product */
